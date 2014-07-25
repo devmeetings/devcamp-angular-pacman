@@ -1,5 +1,4 @@
 app.factory('boardService', [function() {
-
     var currentPlayer;
     var board = {};
     var players = [];
@@ -14,6 +13,18 @@ app.factory('boardService', [function() {
         generateBoard: function() {
             // write board generation stuff here
 
+        },
+        moveLeft: function() {
+            console.log('poszedlem w lewo');
+        },
+        moveRight: function() {
+
+        },
+        moveTop: function() {
+
+        },
+        moveBot: function() {
+            
         }
     }
 }]);
