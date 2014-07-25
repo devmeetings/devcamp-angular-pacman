@@ -1,1 +1,0 @@
-define(["angular","angular-route","js/controller/home-controller"],function(e){"use strict";e.module("ng-boilerplate",["ngRoute","ng-boilerplate.home-controller"]).config(["$routeProvider","$sceProvider",function(e,o){e.when("/",{controller:"HomeController",templateUrl:"public/template/home.html"}).otherwise({redirectTo:"/"}),o.enabled(!1)}])});

@@ -1,20 +1,16 @@
 {
-  "name": "ng-boilerplate",
-  "version": "1.0.3",
-  "homepage": "http://github.com/ianwalter/ng-boilerplate",
-  "main": "index.html",
-  "authors": [
-    "Ian Kennington Walter (http://ianvonwalter.com)"
-  ],
-  "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules"
-  ],
+  "name": "pacman",
+  "version": "0.0.0",
   "dependencies": {
-    "requirejs": "~2.1.10",
-    "angular": "v1.2.11",
-    "angular-route": "v1.2.11",
-    "angular-mocks": "v1.2.11"
-  }
+    "angular": "1.2.16",
+    "json3": "~3.3.1",
+    "es5-shim": "~3.1.0",
+    "bootstrap": "~3.2.0",
+    "angular-route": "1.2.16"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.2.16",
+    "angular-scenario": "1.2.16"
+  },
+  "appPath": "app"
 }
