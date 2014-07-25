@@ -24,16 +24,15 @@ app.factory('boardService', [function() {
 
         },
         moveLeft: function() {
-            //this.move(currentPlayer
-        },
+            console.log('poszedlem w lewo');        },
         moveRight: function() {
-
+          return [{ x: 0, y: 0, status: 2}]
         },
-        moveTop: function() {
-
+        moveUp: function() {
+          return [{ x: 0, y: 0, status: 3}]
         },
-        moveBot: function() {
-
+        moveDown: function() {
+          return [{ x: 0, y: 0, status: 4}]
         }
     }
 }]);
