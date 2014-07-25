@@ -8,10 +8,6 @@
  * Controller of the pacmanApp
  */
 angular.module('pacmanApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  .controller('MainCtrl', ['$scope', 'boardService', function ($scope, boardService) {
+  		
+  }]);
