@@ -4,7 +4,9 @@ app.directive('board', ['boardService', function(boardService) {
 			restrict: 'EC',
       templateUrl: '/views/board.html',
 			link: function($scope, $element, $attrs) {
-				var moveKeyCode = {
+				$scope.board = boardService.returnBoard();
+
+                var moveKeyCode = {
 					37: 'Left',
 					38: 'Up',
 					39: 'Right',
