@@ -29,57 +29,57 @@ var app =angular
   .constant('PLAYERS_ACTIONS', {
     37: {
       action: {
-        x: -1,
-        y: 0
+        column: -1,
+        row: 0
       },
       playerId: 1
     },
     38: {
       action: {
-        x: 0,
-        y: 1
+        column: 0,
+        row: 1
       },
       playerId: 1
     },
     39: {
       action: {
-        x: 1,
-        y: 0
+        column: 1,
+        row: 0
       },
       playerId: 1
     },
     40: {
       action: {
-        x: 0,
-        y: -1
+        column: 0,
+        row: -1
       },
       playerId: 1
     },
     65: {
       action: {
-        x: -1,
-        y: 0
+        column: -1,
+        row: 0
       },
       playerId: 0
     },
     87: {
       action: {
-        x: 0,
-        y: 1
+        column: 0,
+        row: 1
       },
       playerId: 0
     },
     68: {
       action: {
-        x: 1,
-        y: 0
+        column: 1,
+        row: 0
       },
       playerId: 0
     },
     83: {
       action: {
-        x: 0,
-        y: -1
+        column: 0,
+        row: -1
       },
       playerId: 0
     }

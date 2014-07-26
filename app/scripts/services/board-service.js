@@ -3,21 +3,21 @@ app.factory('boardService', [function() {
   var board = [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0],[0,2,0,0,0,0,2,0,0,2,0,0,2,0,0,2,0,0,2,0,0,2,0,0,0,0,2,0],[0,2,0,0,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0,0,0,2,0,0,0,0,2,0],[0,2,0,0,0,0,2,0,0,2,0,0,2,0,0,2,0,0,2,0,0,2,0,0,0,0,2,0],[0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0],[0,2,0,0,0,0,2,0,0,2,0,0,0,0,0,0,0,0,2,0,0,2,0,0,0,0,2,0],[0,2,0,0,0,0,2,0,0,2,0,0,0,0,0,0,0,0,2,0,0,2,0,0,0,0,2,0],[0,2,2,2,2,2,2,0,0,2,2,2,2,0,0,2,2,2,2,0,0,2,2,2,2,2,2,0],[0,0,0,2,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0],[0,0,0,2,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0],[0,0,0,2,2,2,2,0,0,2,2,2,2,2,2,2,2,2,2,0,0,2,2,2,2,0,0,0],[0,0,0,2,0,0,2,0,0,2,0,0,0,0,0,0,0,0,2,0,0,2,0,0,2,0,0,0],[0,0,0,2,0,0,2,2,2,2,0,0,0,0,0,0,0,0,2,2,2,2,0,0,2,0,0,0],[0,2,2,2,2,2,2,0,0,2,2,2,2,2,2,2,2,2,2,0,0,2,2,2,2,2,2,0],[0,0,0,2,0,0,2,0,0,2,0,0,0,0,0,0,0,0,2,0,0,2,0,0,2,0,0,0],[0,0,0,2,0,0,2,2,2,2,0,0,0,0,0,0,0,0,2,2,2,2,0,0,2,0,0,0],[0,0,0,2,2,2,2,0,0,2,2,2,2,2,2,2,2,2,2,0,0,2,2,2,2,0,0,0],[0,0,0,2,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0],[0,0,0,2,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0],[0,2,2,2,2,2,2,2,2,2,2,2,2,0,0,2,2,2,2,2,2,2,2,2,2,2,2,0],[0,2,0,0,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0,0,0,2,0,0,0,0,2,0],[0,2,0,0,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0,0,0,2,0,0,0,0,2,0],[0,2,2,2,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,2,2,2,0],[0,0,0,2,0,0,2,0,0,2,0,0,0,0,0,0,0,0,2,0,0,2,0,0,2,0,0,0],[0,0,0,2,0,0,2,0,0,2,0,0,0,0,0,0,0,0,2,0,0,2,0,0,2,0,0,0],[0,2,2,2,2,2,2,2,2,2,2,2,2,0,0,2,2,2,2,2,2,2,2,2,2,2,2,0],[0,2,0,0,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0,0,0,2,0,0,0,0,2,0],[0,2,0,0,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0,0,0,2,0,0,0,0,2,0],[0,2,2,2,2,2,2,0,0,0,0,0,2,2,2,2,0,0,0,0,0,2,2,2,2,2,2,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]];
   var players = [{
     position: {
-      x: 0,
-      y: 0
+      column: 0,
+      row: 0
     },
     score: 0
   }, {
     position: {
-      x: 0,
-      y: 0
+      column: 0,
+      row: 0
     },
     score: 0
   }];
 
   function checkIfCanMove(playerPosition, toPosition) {
-    if (playerPosition.x+1 < toPosition.x || playerPosition.x-1 > toPosition.x ||
-      playerPosition.y+1 < toPosition.y || playerPosition.y-1 > toPosition.y) {
+    if (playerPosition.column+1 < toPosition.column || playerPosition.column-1 > toPosition.column ||
+      playerPosition.row+1 < toPosition.row || playerPosition.row-1 > toPosition.row) {
       console.log('error. selected field is to far.');
       return false;
     }
@@ -26,11 +26,11 @@ app.factory('boardService', [function() {
   }
 
   function checkIfMoveIsLegal(player, toPosition) {
-    if (toPosition.x >= board[0].length || toPosition.x < 0) {
+    if (toPosition.column >= board[0].length || toPosition.column < 0) {
       return false;
     }
 
-    if (toPosition.y >= board.length || toPosition.y < 0) {
+    if (toPosition.row >= board.length || toPosition.row < 0) {
       return false;
     }
 
@@ -39,11 +39,11 @@ app.factory('boardService', [function() {
     }
 
     // check if field is empty or we are able to move
-    return board[toPosition.x][toPosition.y];
+    return board[toPosition.column][toPosition.row];
   }
 
   function emptyField(position) {
-    board[position.x][position.y] = 1;
+    board[position.column][position.row] = 1;
   }
 
   return {
@@ -60,7 +60,7 @@ app.factory('boardService', [function() {
       console.log(playerId, toPosition)
       if (!checkIfMoveIsLegal(player, toPosition)) { return actions; }
 
-      return [{ x: 0, y: 0, status: 2}];
+      return [{ column: 0, row: 0, status: 2}];
     }
   }
 }]);
