@@ -8,6 +8,6 @@
  * Controller of the pacmanApp
  */
 angular.module('pacmanApp')
-  .controller('MainCtrl', ['$scope', 'boardService', function ($scope, boardService) {
+  .controller('MainCtrl', ['$scope', function ($scope) {
   	//boardService.move();
   }]);
