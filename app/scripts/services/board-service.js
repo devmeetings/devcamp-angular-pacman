@@ -45,6 +45,7 @@ app.factory('boardService', ['DEFAULT_BOARD', 'DEFAULT_PLAYERS', function(DEFAUL
 	}
 
 	return {
+		players: players,
 		returnBoard: function() {
 			return board;
 		},

@@ -9,5 +9,6 @@
  */
 angular.module('pacmanApp')
   .controller('MainCtrl', ['$scope', function ($scope) {
-  	//boardService.move();
+
+
   }]);
