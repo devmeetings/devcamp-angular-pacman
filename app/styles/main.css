@@ -82,9 +82,9 @@ body {
 /* Board */
 .game-board {
     background: #000;
-    border: 1px solid #333;
+    border: 3px solid #000;
     display: inline-block;
-    padding: 3px;
+    position: relative;
 }
 
 .board-row {
@@ -111,4 +111,22 @@ body {
 
 .board-cell[data-type="2"]:before {
     content: ".";
+}
+
+.pacman {
+    height: 20px;
+    position: absolute;
+    width: 20px;
+}
+
+.pacman[data-direction="left"] {
+    transform: rotate(180deg);
+}
+
+.pacman[data-direction="up"] {
+    transform: rotate(270deg);
+}
+
+.pacman[data-direction="down"] {
+    transform: rotate(90deg);
 }
