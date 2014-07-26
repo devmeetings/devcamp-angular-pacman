@@ -6,7 +6,7 @@ app.directive('board', ['boardService', 'PLAYERS_ACTIONS', function(boardService
 			link: function($scope, $element, $attrs) {
 				$('html').on('keydown', function(e) {
           if (!moveKeyCode[e.keyCode]) return;
-					var changesArray = boardService['move' + moveKeyCode[e.keyCode].action](moveKeyCode[e.keyCode].playerId);
+					var changesArray = boardService.move(moveKeyCode[e.keyCode].playerId, moveKeyCode[e.keyCode].action)
 					changesArray.forEach(function(item) {
             drawNewStatus($element, item)
 					});
