@@ -1,83 +1,97 @@
 app.factory('boardService', [function() {
-<<<<<<< HEAD
-  var board = [];
-  var players = [{
-    position: {
-      x: 0,
-      y: 0
-    },
-    score: 0
-  }, {
+	var board = [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0],[0,2,0,0,0,0,2,0,0,2,0,0,2,0,0,2,0,0,2,0,0,2,0,0,0,0,2,0],[0,2,0,0,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0,0,0,2,0,0,0,0,2,0],[0,2,0,0,0,0,2,0,0,2,0,0,2,0,0,2,0,0,2,0,0,2,0,0,0,0,2,0],[0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0],[0,2,0,0,0,0,2,0,0,2,0,0,0,0,0,0,0,0,2,0,0,2,0,0,0,0,2,0],[0,2,0,0,0,0,2,0,0,2,0,0,0,0,0,0,0,0,2,0,0,2,0,0,0,0,2,0],[0,2,2,2,2,2,2,0,0,2,2,2,2,0,0,2,2,2,2,0,0,2,2,2,2,2,2,0],[0,0,0,2,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0],[0,0,0,2,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0],[0,0,0,2,2,2,2,0,0,2,2,2,2,2,2,2,2,2,2,0,0,2,2,2,2,0,0,0],[0,0,0,2,0,0,2,0,0,2,0,0,0,0,0,0,0,0,2,0,0,2,0,0,2,0,0,0],[0,0,0,2,0,0,2,2,2,2,0,0,0,0,0,0,0,0,2,2,2,2,0,0,2,0,0,0],[0,2,2,2,2,2,2,0,0,2,2,2,2,2,2,2,2,2,2,0,0,2,2,2,2,2,2,0],[0,0,0,2,0,0,2,0,0,2,0,0,0,0,0,0,0,0,2,0,0,2,0,0,2,0,0,0],[0,0,0,2,0,0,2,2,2,2,0,0,0,0,0,0,0,0,2,2,2,2,0,0,2,0,0,0],[0,0,0,2,2,2,2,0,0,2,2,2,2,2,2,2,2,2,2,0,0,2,2,2,2,0,0,0],[0,0,0,2,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0],[0,0,0,2,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0],[0,2,2,2,2,2,2,2,2,2,2,2,2,0,0,2,2,2,2,2,2,2,2,2,2,2,2,0],[0,2,0,0,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0,0,0,2,0,0,0,0,2,0],[0,2,0,0,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0,0,0,2,0,0,0,0,2,0],[0,2,2,2,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,2,2,2,0],[0,0,0,2,0,0,2,0,0,2,0,0,0,0,0,0,0,0,2,0,0,2,0,0,2,0,0,0],[0,0,0,2,0,0,2,0,0,2,0,0,0,0,0,0,0,0,2,0,0,2,0,0,2,0,0,0],[0,2,2,2,2,2,2,2,2,2,2,2,2,0,0,2,2,2,2,2,2,2,2,2,2,2,2,0],[0,2,0,0,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0,0,0,2,0,0,0,0,2,0],[0,2,0,0,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0,0,0,2,0,0,0,0,2,0],[0,2,2,2,2,2,2,0,0,0,0,0,2,2,2,2,0,0,0,0,0,2,2,2,2,2,2,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]];
 
-  }];
+	var players = [{
+		position: {
+			row: 0,
+			column: 0
+		},
+		score: 0
+	}, 
+	{
+		position: {
+			row: 0,
+			column: 0
+		},
+		score: 0
+	}];
 
-  function checkIfCanMove(playerPosition, toPosition) {
-    if (playerPosition.x+1 < toPosition.x || playerPosition.x-1 > toPosition.x ||
-        playerPosition.y+1 < toPosition.y || playerPosition.y-1 > toPosition.y) {
-      console.log('error. selected field is to far.');
-    return false;
-=======
-    var board = [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0],[0,2,0,0,0,0,2,0,0,2,0,0,2,0,0,2,0,0,2,0,0,2,0,0,0,0,2,0],[0,2,0,0,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0,0,0,2,0,0,0,0,2,0],[0,2,0,0,0,0,2,0,0,2,0,0,2,0,0,2,0,0,2,0,0,2,0,0,0,0,2,0],[0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0],[0,2,0,0,0,0,2,0,0,2,0,0,0,0,0,0,0,0,2,0,0,2,0,0,0,0,2,0],[0,2,0,0,0,0,2,0,0,2,0,0,0,0,0,0,0,0,2,0,0,2,0,0,0,0,2,0],[0,2,2,2,2,2,2,0,0,2,2,2,2,0,0,2,2,2,2,0,0,2,2,2,2,2,2,0],[0,0,0,2,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0],[0,0,0,2,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0],[0,0,0,2,2,2,2,0,0,2,2,2,2,2,2,2,2,2,2,0,0,2,2,2,2,0,0,0],[0,0,0,2,0,0,2,0,0,2,0,0,0,0,0,0,0,0,2,0,0,2,0,0,2,0,0,0],[0,0,0,2,0,0,2,2,2,2,0,0,0,0,0,0,0,0,2,2,2,2,0,0,2,0,0,0],[0,2,2,2,2,2,2,0,0,2,2,2,2,2,2,2,2,2,2,0,0,2,2,2,2,2,2,0],[0,0,0,2,0,0,2,0,0,2,0,0,0,0,0,0,0,0,2,0,0,2,0,0,2,0,0,0],[0,0,0,2,0,0,2,2,2,2,0,0,0,0,0,0,0,0,2,2,2,2,0,0,2,0,0,0],[0,0,0,2,2,2,2,0,0,2,2,2,2,2,2,2,2,2,2,0,0,2,2,2,2,0,0,0],[0,0,0,2,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0],[0,0,0,2,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0],[0,2,2,2,2,2,2,2,2,2,2,2,2,0,0,2,2,2,2,2,2,2,2,2,2,2,2,0],[0,2,0,0,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0,0,0,2,0,0,0,0,2,0],[0,2,0,0,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0,0,0,2,0,0,0,0,2,0],[0,2,2,2,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,2,2,2,0],[0,0,0,2,0,0,2,0,0,2,0,0,0,0,0,0,0,0,2,0,0,2,0,0,2,0,0,0],[0,0,0,2,0,0,2,0,0,2,0,0,0,0,0,0,0,0,2,0,0,2,0,0,2,0,0,0],[0,2,2,2,2,2,2,2,2,2,2,2,2,0,0,2,2,2,2,2,2,2,2,2,2,2,2,0],[0,2,0,0,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0,0,0,2,0,0,0,0,2,0],[0,2,0,0,0,0,2,0,0,0,0,0,2,0,0,2,0,0,0,0,0,2,0,0,0,0,2,0],[0,2,2,2,2,2,2,0,0,0,0,0,2,2,2,2,0,0,0,0,0,2,2,2,2,2,2,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]];
-    var players = [{
-        position: {
-            x: 0,
-            y: 0
-        },
-        score: 0
-    }, {
+	function checkIfCanMove(playerPosition, toPosition) {
+		if (playerPosition.row+1 < toPosition.row || playerPosition.row-1 > toPosition.row ||
+			playerPosition.column+1 < toPosition.column || playerPosition.column-1 > toPosition.column) {
+			console.log('error. selected field is to far.');
+			return false;
+		}
 
-    }];
+		return true;
+	}
 
-    function checkIfCanMove(playerPosition, toPosition) {
-        if (playerPosition.x+1 < toPosition.x || playerPosition.x-1 > toPosition.x ||
-            playerPosition.y+1 < toPosition.y || playerPosition.y-1 > toPosition.y) {
-            console.log('error. selected field is to far.');
-            return false;
-        }
+	function checkIfMoveIsLegal(player, toPosition) {
+		if (toPosition.row >= board[0].length || toPosition.row < 0) {
+			return false;
+		}
 
-        return true;
->>>>>>> 2148d796b6a17d61fe241b9eaa5783c96e270a46
-    }
+		if (toPosition.column >= board.length || toPosition.column < 0) {
+			return false;
+		}
 
-    return true;
-  }
+		if (!checkIfCanMove(player.position, toPosition)) {
+			return false;
+		}
 
-  function checkIfMoveIsLegal(player, toPosition) {
-    if (toPosition.x >= board[0].length || toPosition.x < 0) {
-      return false;
-    }
+		// check if field is empty or we are able to move
+		return board[toPosition.row][toPosition.column];
+	}
 
-    if (toPosition.y >= board.length || toPosition.y < 0) {
-      return false;
-    }
+	function emptyField(position) {
+		board[position.row][position.column] = 0;
+	}
 
-    if (!checkIfCanMove(player.position, toPosition)) {
-      return false;
-    }
+	function changePlayerPosition(player, position) {
+		player.row = position.row;
+		player.column = position.column;
+	}
 
-    // check if field is empty or we are able to move
-    return board[toPosition.x][toPosition.y];
-  }
+	function getFieldStatus(position) {
+		return board[position.row][position.column];
+	}
 
-  function emptyField(position) {
-    board[position.x][position.y] = 1;
-  }
+	return {
+		returnBoard: function() {
+			return board;
+		},
+		generateBoard: function() {
+			// write board generation stuff here
+			
+		},
+		move: function (playerId, positionChange) {
+			var actions = [];
+			var player = players[playerId];
 
-  return {
-    returnBoard: function() {
-      return board;
-    },
-    generateBoard: function() {
-      // write board generation stuff here
+			var toPosition = player.position;
+			var fieldStatus;
 
-    },
-    move: function (playerId, toPosition) {
-      var actions = [];
-      var player = players[playerId];
-      console.log(playerId, toPosition)
-      if (!checkIfMoveIsLegal(player, toPosition)) { return actions; }
+			var oldPosition = JSON.parse(JSON.stringify(player.position));
 
-      return [{ x: 0, y: 0, status: 2}];
-    }
-  }
+			toPosition.row += positionChange.row;
+			toPosition.column += positionChange.column;
+
+			fieldStatus = checkIfMoveIsLegal(player, toPosition);
+
+			if (!fieldStatus) { return actions; };
+
+			if (fieldStatus === 2) {
+				player.score += 1;
+
+				emptyField(toPosition);
+			}
+
+			changePlayerPosition(player, toPosition);
+
+			actions.push({ row: toPosition.row, column: toPosition.column, status: 3 });
+			actions.push({ row: toPosition.row, column: toPosition.column, status: getFieldStatus(oldPosition) });
+
+			return actions;
+		}
+	}
 }]);
