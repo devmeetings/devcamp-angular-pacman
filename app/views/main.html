@@ -1,1 +1,21 @@
 <board></board>
+<div class="row">
+  <h3>Connected Players</h3>
+  <ul>
+    <li ng-repeat="(key, user) in players">
+      {{key}}
+    </li>
+  </ul>
+
+  <h3>Moves made</h3>
+  <ul>
+    <li ng-repeat="move in moves | isActivePlayer: players">
+      {{move}}
+    </li>
+  </ul>
+
+  <h3>New move</h3>
+  <input type="text" ng-model="nextMove.x">
+  <input type="text" ng-model="nextMove.y"><br/>
+  <button ng-click="move()">Move</button>
+</div>
