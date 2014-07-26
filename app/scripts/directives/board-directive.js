@@ -1,22 +1,24 @@
 app.directive('board', ['boardService', 'PLAYERS_ACTIONS', function(boardService, PLAYERS_ACTIONS) {
-    var moveKeyCode = PLAYERS_ACTIONS
-		return {
-			restrict: 'EC',
-      templateUrl: '/views/board.html',
-			link: function($scope, $element, $attrs) {
-				$('html').on('keydown', function(e) {
-          if (!moveKeyCode[e.keyCode]) return;
-					var changesArray = boardService.move(moveKeyCode[e.keyCode].playerId, moveKeyCode[e.keyCode].action)
-					changesArray.forEach(function(item) {
-            drawNewStatus($element, item)
-					});
-				});
+  var moveKeyCode = PLAYERS_ACTIONS
+  return {
+    restrict: 'EC',
+    templateUrl: '/views/board.html',
+    link: function($scope, $element, $attrs) {
+      $scope.board = boardService.returnBoard();
 
-				// statusObject structure: { x: integer, y: integer, status: integer }
-				function drawNewStatus($element, statusObject) {
-          field = $element.find('field').eq(statusObject.x * 25 + statusObject.y * 35)
-          field.attr('status', statusObject.status)
-				}
-			}
-		}
-	}]);
+      $('html').on('keydown', function(e) {
+        if (!moveKeyCode[e.keyCode]) return;
+        var changesArray = boardService.move(moveKeyCode[e.keyCode].playerId, moveKeyCode[e.keyCode].action)
+        changesArray.forEach(function(item) {
+          drawNewStatus($element, item)
+        });
+      });
+
+      // statusObject structure: { x: integer, y: integer, status: integer }
+      function drawNewStatus($element, statusObject) {
+        field = $element.find('field').eq(statusObject.x * 25 + statusObject.y * 35)
+        field.attr('status', statusObject.status)
+      }
+    }
+  }
+}]);
