@@ -8,7 +8,11 @@ app.factory('boardService', [function() {
     },
     score: 0
   }, {
-
+    position: {
+      x: 0,
+      y: 0
+    },
+    score: 0
   }];
 
   function checkIfCanMove(playerPosition, toPosition) {

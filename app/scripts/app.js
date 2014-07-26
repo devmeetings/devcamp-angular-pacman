@@ -60,28 +60,28 @@ var app =angular
         x: -1,
         y: 0
       },
-      playerId: 2
+      playerId: 0
     },
     87: {
       action: {
         x: 0,
         y: 1
       },
-      playerId: 2
+      playerId: 0
     },
     68: {
       action: {
         x: 1,
         y: 0
       },
-      playerId: 2
+      playerId: 0
     },
     83: {
       action: {
         x: 0,
         y: -1
       },
-      playerId: 2
+      playerId: 0
     }
   })
   
