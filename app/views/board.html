@@ -1,4 +1,6 @@
 <h3>Board</h3>
-<div>
-  <field></field>
+<div class="game-board">
+    <div class="board-row" ng-repeat="arr in board" ng-init="row = $index">
+        <div class="board-cell" data-type="{{cell}}" ng-repeat="cell in arr track by $index" ng-init="column = $index"></div>
+    </div>
 </div>

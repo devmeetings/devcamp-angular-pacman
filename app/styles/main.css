@@ -77,3 +77,38 @@ body {
     border-bottom: 0;
   }
 }
+
+
+/* Board */
+.game-board {
+    background: #000;
+    border: 1px solid #333;
+    display: inline-block;
+    padding: 3px;
+}
+
+.board-row {
+    height: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.board-cell {
+    color: #fff;
+    display: inline-block;
+    font-size: 10px;
+    height: 20px;
+    line-height: 12px;
+    margin: 0;
+    padding-left: 9px;
+    vertical-align: top;
+    width: 20px;
+}
+
+.board-cell[data-type="0"] {
+    background: #00f;
+}
+
+.board-cell[data-type="2"]:before {
+    content: ".";
+}
