@@ -1,21 +1,8 @@
-app.factory('boardService', ['DEFAULT_BOARD', function(DEFAULT_BOARD) {
+app.factory('boardService', ['DEFAULT_BOARD', 'DEFAULT_PLAYERS', function(DEFAULT_BOARD, DEFAULT_PLAYERS) {
 
 	var board = DEFAULT_BOARD;
 
-	var players = [{
-		position: {
-			row: 0,
-			column: 0
-		},
-		score: 0
-	}, 
-	{
-		position: {
-			row: 0,
-			column: 0
-		},
-		score: 0
-	}];
+	var players = DEFAULT_PLAYERS;
 
 	function checkIfCanMove(playerPosition, toPosition) {
 		if (playerPosition.row+1 < toPosition.row || playerPosition.row-1 > toPosition.row ||
@@ -28,11 +15,11 @@ app.factory('boardService', ['DEFAULT_BOARD', function(DEFAULT_BOARD) {
 	}
 
 	function checkIfMoveIsLegal(player, toPosition) {
-		if (toPosition.row >= board[0].length || toPosition.row < 0) {
+		if (toPosition.row >= board.length || toPosition.row < 0) {
 			return false;
 		}
 
-		if (toPosition.column >= board.length || toPosition.column < 0) {
+		if (toPosition.column >= board[0].length || toPosition.column < 0) {
 			return false;
 		}
 
@@ -45,12 +32,12 @@ app.factory('boardService', ['DEFAULT_BOARD', function(DEFAULT_BOARD) {
 	}
 
 	function emptyField(position) {
-		board[position.row][position.column] = 0;
+		board[position.row][position.column] = 1;
 	}
 
 	function changePlayerPosition(player, position) {
-		player.row = position.row;
-		player.column = position.column;
+		player.position.row = position.row;
+		player.position.column = position.column;
 	}
 
 	function getFieldStatus(position) {
@@ -72,8 +59,7 @@ app.factory('boardService', ['DEFAULT_BOARD', function(DEFAULT_BOARD) {
 			var actions = [];
 			var player = players[playerId];
 
-			var toPosition = player.position;
-			var fieldStatus;
+			var toPosition = JSON.parse(JSON.stringify(player.position));
 
 			var oldPosition = JSON.parse(JSON.stringify(player.position));
 
@@ -92,8 +78,8 @@ app.factory('boardService', ['DEFAULT_BOARD', function(DEFAULT_BOARD) {
 
 			changePlayerPosition(player, toPosition);
 
+			actions.push({ row: oldPosition.row, column: oldPosition.column, status: getFieldStatus(oldPosition) });
 			actions.push({ row: toPosition.row, column: toPosition.column, status: 3 });
-			actions.push({ row: toPosition.row, column: toPosition.column, status: getFieldStatus(oldPosition) });
 
 			return actions;
 		}

@@ -1,7 +1,5 @@
 <h3>Board</h3>
 <div class="game-board">
-    <img id="player1" class="pacman" src="../images/pacman.gif" data-direction="right" style="left: 20px; top: 20px;">
-    <img id="player2" class="pacman" src="../images/pacman.gif" data-direction="left" style="left: 520px; top: 20px;">
     <div class="board-row" ng-repeat="arr in board" ng-init="row = $index">
         <div class="board-cell" data-type="{{cell}}" ng-repeat="cell in arr track by $index" ng-init="column = $index"></div>
     </div>
