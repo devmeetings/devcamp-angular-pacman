@@ -25,4 +25,63 @@ var app =angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+  })
+  .constant('PLAYERS_ACTIONS', {
+    37: {
+      action: {
+        x: -1,
+        y: 0
+      },
+      playerId: 1
+    },
+    38: {
+      action: {
+        x: 0,
+        y: 1
+      },
+      playerId: 1
+    },
+    39: {
+      action: {
+        x: 1,
+        y: 0
+      },
+      playerId: 1
+    },
+    40: {
+      action: {
+        x: 0,
+        y: -1
+      },
+      playerId: 1
+    },
+    65: {
+      action: {
+        x: -1,
+        y: 0
+      },
+      playerId: 2
+    },
+    87: {
+      action: {
+        x: 0,
+        y: 1
+      },
+      playerId: 2
+    },
+    68: {
+      action: {
+        x: 1,
+        y: 0
+      },
+      playerId: 2
+    },
+    83: {
+      action: {
+        x: 0,
+        y: -1
+      },
+      playerId: 2
+    }
+  })
+  

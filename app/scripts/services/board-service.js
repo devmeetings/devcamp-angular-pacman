@@ -23,16 +23,17 @@ app.factory('boardService', [function() {
             // write board generation stuff here
 
         },
-        moveLeft: function() {
-            console.log('poszedlem w lewo');        },
-        moveRight: function() {
-          return [{ x: 0, y: 0, status: 2}]
+        moveLeft: function(playerId) {
+          console.log('player ', playerId, ' went left')
         },
-        moveUp: function() {
-          return [{ x: 0, y: 0, status: 3}]
+        moveRight: function(playerId) {
+          console.log('player ', playerId, ' went right')
         },
-        moveDown: function() {
-          return [{ x: 0, y: 0, status: 4}]
+        moveUp: function(playerId) {
+          console.log('player ', playerId, ' went up')
+        },
+        moveDown: function(playerId) {
+          console.log('player ', playerId, ' went down')
         }
     }
 }]);

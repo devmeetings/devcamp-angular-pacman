@@ -1,17 +1,12 @@
-app.directive('board', ['boardService', function(boardService) {
-
+app.directive('board', ['boardService', 'PLAYERS_ACTIONS', function(boardService, PLAYERS_ACTIONS) {
+    var moveKeyCode = PLAYERS_ACTIONS
 		return {
 			restrict: 'EC',
       templateUrl: '/views/board.html',
 			link: function($scope, $element, $attrs) {
-				var moveKeyCode = {
-					37: 'Left',
-					38: 'Up',
-					39: 'Right',
-					40: 'Down'
-				};
 				$('html').on('keydown', function(e) {
-					var changesArray = boardService['move' + moveKeyCode[e.keyCode]]();
+          if (!moveKeyCode[e.keyCode]) return;
+					var changesArray = boardService['move' + moveKeyCode[e.keyCode].action](moveKeyCode[e.keyCode].playerId);
 					changesArray.forEach(function(item) {
             drawNewStatus($element, item)
 					});
