@@ -77,3 +77,56 @@ body {
     border-bottom: 0;
   }
 }
+
+
+/* Board */
+.game-board {
+    background: #000;
+    border: 3px solid #000;
+    display: inline-block;
+    position: relative;
+}
+
+.board-row {
+    height: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.board-cell {
+    color: #fff;
+    display: inline-block;
+    font-size: 10px;
+    height: 20px;
+    line-height: 12px;
+    margin: 0;
+    padding-left: 9px;
+    vertical-align: top;
+    width: 20px;
+}
+
+.board-cell[data-type="0"] {
+    background: #00f;
+}
+
+.board-cell[data-type="2"]:before {
+    content: ".";
+}
+
+.pacman {
+    height: 20px;
+    position: absolute;
+    width: 20px;
+}
+
+.pacman[data-direction="left"] {
+    transform: rotate(180deg);
+}
+
+.pacman[data-direction="up"] {
+    transform: rotate(270deg);
+}
+
+.pacman[data-direction="down"] {
+    transform: rotate(90deg);
+}
