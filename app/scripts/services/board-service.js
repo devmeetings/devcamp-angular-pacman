@@ -1,13 +1,13 @@
 app.factory('boardService', [function() {
-    var currentPlayer;
     var board = [];
     var players = [{
-        id: 1,
         position: {
             x: 0,
             y: 0
         },
-        pacman: 0
+        score: 0
+    }, {
+
     }];
 
     function checkIfCanMove(playerPosition, toPosition) {
@@ -20,7 +20,7 @@ app.factory('boardService', [function() {
         return true;
     }
 
-    function checkIfMoveIsLegal(playerId, toPosition) {
+    function checkIfMoveIsLegal(player, toPosition) {
         if (toPosition.x >= board[0].length || toPosition.x < 0) {
             return false;
         }
@@ -29,34 +29,16 @@ app.factory('boardService', [function() {
             return false;
         }
 
-        for (var i = players.length; i--;) {
-            var player = players[i];
-
-            // we do validation only for current player. 
-            // validation of all moves should be done on server side
-            if (player.id === playerId && playerId === currentPlayer.id) { 
-                if (!checkIfCanMove(player.position, toPosition)) {
-                    return false;
-                }
-            }
+        if (!checkIfCanMove(player.position, toPosition)) {
+            return false;
         }
-
+        
         // check if field is empty or we are able to move
         return board[toPosition.x][toPosition.y];
     }
 
     function emptyField(position) {
         board[position.x][position.y] = 1;
-    }
-
-    function moveActions(playerId, toPosition) {
-        var actions = [];
-        
-    }
-
-    function move(playerId, toPosition) {
-        if (!checkIfMoveIsLegal(playerId, toPosition)) { return false; }
-
     }
 
     return {
@@ -67,17 +49,13 @@ app.factory('boardService', [function() {
             // write board generation stuff here
 
         },
-        moveLeft: function() {
-            console.log('poszedlem w lewo');        
-        },
-        moveRight: function() {
-          return [{ x: 0, y: 0, status: 2}]
-        },
-        moveUp: function() {
-          return [{ x: 0, y: 0, status: 3}]
-        },
-        moveDown: function() {
-          return [{ x: 0, y: 0, status: 4}]
+
+        move: function (playerId, toPosition) {
+            var actions = [];
+            var player = players[playerId];
+            if (!checkIfMoveIsLegal(player, toPosition)) { return actions; }
+
+            return [{ x: 0, y: 0, status: 2}];
         }
     }
 }]);
